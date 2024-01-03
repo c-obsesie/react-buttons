@@ -1,0 +1,291 @@
+@import "./variables/variables";
+
+// Gradient list
+.button-component {
+    cursor: pointer;
+    .outline-green {
+        background: #00d959;
+    }
+
+    .outline-orange {
+        background: #f09536;
+    }
+
+    .gradien-outline-blue {
+        background: linear-gradient(80deg, #0776fe 0%, #55bef0 100%);
+    }
+
+    .gradient-gold {
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.3) 0%,
+                rgba(0, 0, 0, 0.3) 100%
+            ),
+            linear-gradient(90deg, #f08c35 2.27%, #e9cb39 100%) border-box;
+        color: white;
+    }
+    .primary{
+        background: #00d959;
+        color: white;
+    }
+    .secondary{
+        background: #0075ff;
+        color: white;
+    }
+    .danger{
+        background: #ff0606;
+        color: white;
+    }
+
+    .gradient-blue-purple {
+        background: linear-gradient(90deg, #008598 0%, #a63ab1 132.99%)
+            border-box;
+    }
+    .gradient-blue {
+        background: linear-gradient(80deg, #0776fe 0%, #55bef0 100%) border-box;
+    }
+
+    .gradient-light-blue {
+        background: linear-gradient(90deg, #00d2ff 0%, #43cea2 100%) border-box;
+    }
+
+    .gradient-orange {
+        background: #f04438;
+    }
+
+    .gradient-purple-blue {
+        background: linear-gradient(270deg, #008598 0%, #a63ab1 132.99%)
+            border-box;
+    }
+
+    .gradient-white {
+        background: white;
+    }
+
+    .gradient-black {
+        background: black;
+    }
+
+    .gradient-green-yellow {
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.5) 100%
+            ),
+            linear-gradient(90deg, #30ff00 0%, #ffc001 100%) border-box;
+    }
+
+    .gradient-teal-yellow {
+        background: linear-gradient(270deg, #d3d800 -21.91%, #23ce83 100%)
+            border-box;
+    }
+
+    .gradient-blue-green {
+        background: linear-gradient(60deg, #02a1d3 18.39%, #00d43c 83.52%)
+            border-box;
+    }
+
+    .gradient-blue-purple-2 {
+        // background: linear-gradient(60deg, #02a1d3 18.39%, #9206ff 83.52%)
+        //     border-box;
+        background: linear-gradient(
+            69deg,
+            #0075ff 0%,
+            #7d5ae1 60.71%,
+            #ce43c8 116.57%
+        );
+    }
+
+    .gradient-brown-red {
+        background: linear-gradient(61deg, #9b553e 17.99%, #ff0606 82.01%);
+    }
+
+    .gradient-purple-red {
+        background: linear-gradient(90deg, #975edf 0%, #d1476f 100%) border-box;
+        color: white;
+    }
+
+    .gradient-green-blue {
+        background: linear-gradient(
+                77deg,
+                #7aa500 9.19%,
+                #03a100 59.92%,
+                #06f 106.58%
+            )
+            border-box;
+    }
+
+    .gray-gradient {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .gradient-green {
+        background: #00d959 border-box;
+    }
+
+    .projects-blue {
+        background: #1570ef;
+    }
+}
+
+
+.rounded-none{border-radius: 0px;}
+.rounded-full{border-radius: 50px;}
+.btn-empty {
+    cursor: pointer;
+    position: relative;
+    padding: 14px 32px;
+    border: none;
+    background: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    -moz-webkit-backdrop-filter: blur(8px);
+
+
+    .before,
+    .after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+    }
+
+    .before {
+        border: 2px solid transparent;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(#fff 0 0);
+        -moz-webkit-mask: linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: clear;
+        -webkit-mask-composite: clear;
+        -moz-webkit-mask-composite: clear;
+    }
+
+    .after {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .label {
+        font-family: "Gotham-Book";
+    }
+
+    // @media (max-width: $xl) {
+    //     padding: $padding-xl;
+    // }
+
+    // @media (max-width: $lg) {
+    //     padding: $padding-lg;
+    // }
+
+    @media (max-width: $md) {
+        padding: 12px 28px;
+    }
+
+    @media (max-width: $sm) {
+        padding: 12px 15px;
+    }
+
+    @media screen and (min-width: 380px) and (max-width: 410px) {
+        padding: 12px 10px;
+    }
+}
+
+.btn-full {
+    cursor: pointer;
+    padding: 14px 32px;
+    position: relative;
+    color: white;
+    border: none;
+
+    z-index: 0;
+
+    .before {
+        position: absolute;
+        inset: 2px;
+        border-radius: inherit;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: -1;
+    }
+
+    .after {
+        border-radius: inherit;
+        position: absolute;
+
+        inset: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .label {
+        font-family: "Gotham-Book";
+    }
+
+    // @media (max-width: $xl) {
+    //     padding: $padding-xl;
+    // }
+
+    // @media (max-width: $lg) {
+    //     padding: $padding-lg;
+    // }
+
+    @media (max-width: $md) {
+        padding: 12px 28px;
+    }
+
+    @media (max-width: $sm) {
+        padding: 12px;
+    }
+
+    @media screen and (min-width: 380px) and (max-width: 410px) {
+        padding: 12px 7px;
+    }
+}
+
+.btn-invert {
+    padding: 14px 32px;
+    position: relative;
+    color: white;
+    border: none;
+
+    z-index: 0;
+
+    /* Shadow/2xl */
+    box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+
+    .before {
+        position: absolute;
+        border-radius: inherit;
+        z-index: -1;
+    }
+    .after {
+        border-radius: inherit;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .label {
+        transition: color 0.3s ease-in-out;
+        font-family: "Gotham-Book";
+    }
+
+    @media (max-width: $md) {
+        padding: 12px 28px;
+    }
+
+    @media (max-width: $sm) {
+        padding: 12px;
+    }
+
+    // @media screen and (min-width: 380px) and (max-width: 420px) {
+    //     padding: 12px 12px;
+    // }
+}
