@@ -1,6 +1,5 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ButtonBuilderView from "@/components/ButtonBuilder/ButtonBuilder.view";
 
 export default function Home() {
-  return <p>sal</p>;
+    return <ButtonBuilderView />;
 }
