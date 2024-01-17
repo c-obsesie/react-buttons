@@ -1,3 +1,4 @@
+"use client";
 import EmptyButton from "./ChildComponents/EmptyButton";
 import FullButton from "./ChildComponents/FullButton";
 import InvertButton from "./ChildComponents/InvertButton";
@@ -11,9 +12,6 @@ const Button = (props: IButton) => {
     return <FullButton {...props} />;
   }
   // INVERT HAS TO BE REWRITTEN
-  if (buttonType === "invert") {
-    return <InvertButton {...props} />;
-  }
 
   return <EmptyButton {...props} />;
 };

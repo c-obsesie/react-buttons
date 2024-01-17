@@ -5,7 +5,10 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  /* background-color: #000;
+  color: white; */
 }
+
 
 .description {
   display: inherit;
@@ -106,6 +109,7 @@
 
 .logo {
   position: relative;
+
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -210,13 +214,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .vercelLogo {
+  /* .vercelLogo {
     filter: invert(1);
   }
 
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
+  } */
 }
 
 @keyframes rotate {
@@ -225,5 +229,75 @@
   }
   to {
     transform: rotate(0deg);
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo .button-o {
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+.slogan {
+  text-align: center;
+  margin: 1rem 0;
+
+}
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cta-button {
+  display: block;
+  width: max-content;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+.cta-button span {
+  margin-left: 0.5rem;
+}
+.install-code {
+  text-align: center;
+  margin: 1rem 0;
+}
+.install-code pre {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+.buy-coffee,
+.menu-icon {
+  cursor: pointer;
+}
+.buy-coffee img,
+.menu-icon img {
+  height: 24px;
+}
+.gradient-buttons {
+  margin: 2rem 0;
+
+  font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+  .nav-items {
+      display: none;
+  }
+  .menu-icon {
+      display: block;
   }
 }

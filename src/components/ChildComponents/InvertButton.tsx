@@ -7,7 +7,7 @@ import {
 const InvertButton = ({
   url,
   target,
-  clickHandler,
+  onClick,
   invertColorTheme = "light",
   className,
   children,
@@ -19,7 +19,7 @@ const InvertButton = ({
   return (
     <a href={url} className="button-component" target={target}>
       <button
-        onClick={clickHandler}
+        onClick={onClick}
         className={`btn-invert ${boxShadow ? boxShadow : ""}`}
         style={{
           color: invertedButtonThemeToHex(invertColorTheme, false),

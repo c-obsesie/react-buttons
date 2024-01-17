@@ -5,31 +5,46 @@ const FullButton = ({
   url,
   target,
   className,
-  clickHandler,
+  onClick,
   children,
   boxShadow,
   rounded,
+  borderColor,
+  backgroundColor,
+  variant,
 }: IButton) => {
   const { handleMouseEnter, handleMouseLeave, opacity } =
     useButtonHoverAnimation();
+  console.log("🚀 ~ borderColor:", borderColor);
 
   return (
-    <a href={url} className="button-component" target={target}>
-      <button
-        onClick={clickHandler}
-        className={`btn-full ${className} ${
+    <button href={url} className="button-component" target={target}>
+      <div
+        onClick={onClick}
+        className={`btn-full ${variant} ${className} ${
           boxShadow ? boxShadow : ""
         } rounded-${rounded}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        style={{
+          background: borderColor,
+        }}
       >
-        <span className={`before ${className}`}></span>
-        <span className={`after ${className}`} style={{ opacity }}></span>
-        <span className="d-flex gap-2 align-items-center lh-1 font-gotham-book">
+        <span
+          className={`before ${variant} ${className}`}
+          style={{
+            background: backgroundColor,
+          }}
+        ></span>
+        <span
+          className={`after ${variant} ${className}`}
+          style={{ opacity }}
+        ></span>
+        <span className="d-flex justify-center gap-1  align-items-center lh-1 font-gotham-book flex">
           {children}
         </span>
-      </button>
-    </a>
+      </div>
+    </button>
   );
 };
 export default FullButton;

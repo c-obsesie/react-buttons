@@ -5,7 +5,7 @@ const EmptyButton = ({
   url,
   target,
   className,
-  clickHandler,
+  onClick,
   children,
   boxShadow,
   rounded,
@@ -16,7 +16,7 @@ const EmptyButton = ({
   return (
     <a href={url} className="button-component" target={target}>
       <button
-        onClick={clickHandler}
+        onClick={onClick}
         className={`btn-empty ${boxShadow ? boxShadow : ""} rounded-${rounded}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
