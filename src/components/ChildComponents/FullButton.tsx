@@ -12,6 +12,9 @@ const FullButton = ({
   borderColor,
   backgroundColor,
   variant,
+  backgroundColorHover,
+  borderColorHover,
+  fontColor,
 }: IButton) => {
   const { handleMouseEnter, handleMouseLeave, opacity } =
     useButtonHoverAnimation();
@@ -28,6 +31,7 @@ const FullButton = ({
         onMouseLeave={handleMouseLeave}
         style={{
           background: borderColor,
+          color: fontColor,
         }}
       >
         <span
@@ -38,7 +42,11 @@ const FullButton = ({
         ></span>
         <span
           className={`after ${variant} ${className}`}
-          style={{ opacity }}
+          style={{
+            opacity,
+            background: backgroundColorHover,
+            border: `1px solid ${borderColorHover}`,
+          }}
         ></span>
         <span className="d-flex justify-center gap-1  align-items-center lh-1 font-gotham-book flex">
           {children}

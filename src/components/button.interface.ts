@@ -13,11 +13,15 @@ export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
     variant : 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
 
     // This takes care of button background and border color 
-    borderColor?: string;
+    borderColor?: string; // TODO problem when setting border color it sets background color as weell
     backgroundColor?: string;
-    // TODO : add Hover 
 
-    // TODO : add font color 
+    //Hover
+    backgroundColorHover?: string;
+    borderColorHover?: string;
+
+
+    fontColor?: string;
 
     //Button size
     size? : 'sm' | 'md' | 'lg' | 'xl'

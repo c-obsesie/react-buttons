@@ -204,6 +204,11 @@ $padding-button: 8px 32px;
         border-radius: inherit;
         background: rgba(0, 0, 0, 0.2);
         z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 96%;
+        height: 89%;
     }
 
     .after {
@@ -214,6 +219,11 @@ $padding-button: 8px 32px;
         opacity: 0;
         z-index: -1;
         transition: opacity 0.3s ease-in-out;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 96%;
+        height: 89%;
         &.blur-hover{
             filter: blur(5px);
         }
