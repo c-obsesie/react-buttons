@@ -6,19 +6,33 @@ export default function Home() {
   return (
     <>
       <div className="container m-auto">
-        <nav className="flex justify-between mt-4">
+        <nav className="flex justify-between mt-4 mb-10">
           <div className="logo">React Buttons</div>
           <div className="nav-items flex gap-x-11 justify-center items-center">
-            <div className="buy-coffee ">Buy me a coffee</div>
-            <div className="menu-icon">Documentation</div>
-            <div className="menu-icon">Examples</div>
+            <div className="buy-coffee ">Docs</div>
+            <div className="menu-icon">Button Builder</div>
+            <div className="menu-icon">Collections</div>
+            <div className="menu-icon gradient-text">AI Button Generator </div>
+          </div>
+          <div className="nav-items flex gap-x-11 justify-center items-center">
+            <button className="button">Get Started</button>
           </div>
         </nav>
       </div>
       <div className="container m-auto">
-        <h2 className="slogan">Click. Create. Captivate</h2>
+        <h2 className="slogan text-xl">
+          {" "}
+          <strong>Click. Create. Captivate</strong>{" "}
+        </h2>
+        <h3 className="text-center text-4xl">
+          Struggling with Buttons and color choices? Say goodbye to the
+          confusion!
+        </h3>
         <p className="subtitle">
-          Buttons Builder for Developers - Elevate Your UI, Effortlessly.
+          This builder is your ally in simplifying complex design decisions,
+          empowering you to effortlessly create buttons and colors that resonate
+          with your vision, eliminating the struggle and maximizing your
+          creative potential.{" "}
         </p>
 
         <a href="#" className="cta-button">
@@ -29,14 +43,8 @@ export default function Home() {
           <pre>npm install react-buttons</pre>
         </div>
 
-        <div className="gradient-buttons">Gradient buttons</div>
         <div className="container"> </div>
 
-        <div className="container mx-auto mb-10 flex justify-between ">
-          <DisplayButton />
-          <DisplayButton />
-          <DisplayButton />
-        </div>
         <div></div>
 
         <h2 className="gradient-buttons">FREE button generator 🚀</h2>

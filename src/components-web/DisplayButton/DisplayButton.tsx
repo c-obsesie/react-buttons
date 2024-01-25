@@ -7,14 +7,10 @@ export default function DisplayButton({ children }: any) {
     <>
       <div className="container-btn m-4">
         {children}
-        <div className="icon-btns">
-          <button className="icon-btn square mr-2"></button>
-          <button className="icon-btn plus">+</button>
-        </div>
+
         <div className="flex justify-end w-full">
           <div className="copy flex justify-center items-center">
-            <IoIosCode size={24} className="mr-2" />
-            <span> Copy</span>
+            <IoIosCode size={24} />
           </div>
         </div>
       </div>

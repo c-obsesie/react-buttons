@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+
   min-height: 100vh;
   /* background-color: #000;
   color: white; */
+  background-color: #080A1C;
+  color: white;
 }
-
 
 .description {
   display: inherit;
@@ -100,7 +101,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -109,7 +110,15 @@
 
 .logo {
   position: relative;
-
+  font-size: 72px;
+  background: -webkit-linear-gradient( 45deg, #A36AFF, #FFAC5E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text{
+  background: -webkit-linear-gradient( 45deg, #A36AFF, #FFAC5E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -244,7 +253,6 @@
 .slogan {
   text-align: center;
   margin: 1rem 0;
-
 }
 .subtitle {
   text-align: center;
@@ -257,7 +265,7 @@
   padding: 1rem 2rem;
   font-size: 1.2rem;
   color: white;
-  background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
   border: none;
   border-radius: 50px;
   text-align: center;
@@ -295,9 +303,9 @@
 }
 @media (max-width: 768px) {
   .nav-items {
-      display: none;
+    display: none;
   }
   .menu-icon {
-      display: block;
+    display: block;
   }
 }
