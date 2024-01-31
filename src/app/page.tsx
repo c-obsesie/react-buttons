@@ -13,7 +13,7 @@ export default function Home() {
             <div className="container m-auto">
                 <Hero />
 
-                <div className="container"> hH</div>
+                <div className=" bg-lime-500 p-5"> hH</div>
 
                 <div></div>
 
