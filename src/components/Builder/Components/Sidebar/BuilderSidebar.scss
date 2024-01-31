@@ -1,0 +1,19 @@
+.react-buttons-builder-sidebar {
+    border-right: 1px solid #304562;
+    > button {
+        background: #1f2d40;
+        border-radius: 16px;
+        border: 1px solid #304562;
+        height: 100px;
+        width: 150px;
+        margin-bottom: 10px;
+
+        &:hover {
+            background: #304562;
+        }
+
+        &.active {
+            border-color: #17212f;
+        }
+    }
+}
