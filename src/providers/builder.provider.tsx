@@ -1,5 +1,3 @@
-"use client";
-
 import { IButtonBuilder } from "@/components/Builder/Builder.interface";
 import {
     Dispatch,
