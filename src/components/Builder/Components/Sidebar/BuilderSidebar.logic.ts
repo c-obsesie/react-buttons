@@ -1,56 +1,70 @@
 import { IconType } from "react-icons/lib";
-import { MdOutlineTextFields, MdSmartButton } from "react-icons/md";
-import { TbBorderRadius, TbIcons } from "react-icons/tb";
-import { HiOutlineColorSwatch } from "react-icons/hi";
+import {
+    MdAnimation,
+    MdOutlineTextFields,
+    MdSmartButton,
+} from "react-icons/md";
+import { TbBorderSides, TbIcons } from "react-icons/tb";
 import { LuMousePointerClick } from "react-icons/lu";
-import { ComponentType, useState } from "react";
+import { ComponentType } from "react";
 import BasicsView from "../Forms/Basics/Basics.view";
 import TypographyView from "../Forms/Typography/Typography.view";
-import BackgroundView from "../Forms/Background/Background.view";
+import ColorsView from "../Forms/Colors/Colors.view";
 import BorderView from "../Forms/Border/Border.view";
 import IconsView from "../Forms/Icons/Icons.view";
 import HoverView from "../Forms/Hover/Hover.view";
+import { BiSolidColorFill } from "react-icons/bi";
+import { IBuilderSidebar } from "./BuilderSidebar.interface";
+import { BuilderForms } from "../../Builder.interface";
 
-export const sidebarMenu: {
-    label: string;
-    Icon: IconType;
-    Component: ComponentType<unknown>;
-    activeProperties: number;
-}[] = [
-    {
-        label: "Basics",
+export const sidebarMenu: IBuilderSidebar = {
+    Basics: {
         Icon: MdSmartButton,
         Component: BasicsView,
-        activeProperties: 0,
+        metadata: {
+            properties: 0,
+        },
     },
-    {
-        label: "Typography",
+    Typography: {
         Icon: MdOutlineTextFields,
         Component: TypographyView,
-        activeProperties: 0,
+        metadata: {
+            properties: 0,
+        },
     },
-    {
-        label: "Background",
-        Icon: HiOutlineColorSwatch,
-        Component: BackgroundView,
-        activeProperties: 0,
+    Colors: {
+        Icon: BiSolidColorFill,
+        Component: ColorsView,
+        metadata: {
+            properties: 0,
+        },
     },
-    {
-        label: "Border",
-        Icon: TbBorderRadius,
+    Border: {
+        Icon: TbBorderSides,
         Component: BorderView,
-        activeProperties: 0,
+        metadata: {
+            properties: 0,
+        },
     },
-    {
-        label: "Icons",
+    Icons: {
         Icon: TbIcons,
         Component: IconsView,
-        activeProperties: 0,
+        metadata: {
+            properties: 0,
+        },
     },
-    {
-        label: "Hover Effects",
+    HoverEffects: {
         Icon: LuMousePointerClick,
         Component: HoverView,
-        activeProperties: 0,
+        metadata: {
+            properties: 0,
+        },
     },
-];
+    Animations: {
+        Icon: MdAnimation,
+        Component: HoverView,
+        metadata: {
+            properties: 0,
+        },
+    },
+};

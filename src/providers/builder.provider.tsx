@@ -1,4 +1,9 @@
-import { IButtonBuilder } from "@/components/Builder/Builder.interface";
+import {
+    BuilderForms,
+    IButtonBuilder,
+} from "@/components/Builder/Builder.interface";
+import { IBuilderSidebar } from "@/components/Builder/Components/Sidebar/BuilderSidebar.interface";
+import { sidebarMenu } from "@/components/Builder/Components/Sidebar/BuilderSidebar.logic";
 import {
     Dispatch,
     ReactNode,
@@ -9,10 +14,12 @@ import {
 } from "react";
 
 export interface IBuilderContext {
-    activeFormComponent: string;
+    activeFormComponent: BuilderForms;
     state: IButtonBuilder;
-    setActiveFormComponent: Dispatch<SetStateAction<string>>;
+    setActiveFormComponent: Dispatch<SetStateAction<BuilderForms>>;
     setState: Dispatch<SetStateAction<IButtonBuilder>>;
+    sidebar: IBuilderSidebar;
+    setSidebar: Dispatch<SetStateAction<IBuilderSidebar>>;
 }
 
 export const BuilderContext = createContext<IBuilderContext>(
@@ -24,13 +31,14 @@ export const useBuilderContext = () => useContext(BuilderContext);
 export default function BuilderProvider({ children }: { children: ReactNode }) {
     const [state, setState] = useState<IButtonBuilder>({} as IButtonBuilder);
     const [activeFormComponent, setActiveFormComponent] =
-        useState<string>("Basics");
-
-    console.log("PROVIDER VALUES", state);
+        useState<BuilderForms>(BuilderForms.Basics);
+    const [sidebar, setSidebar] = useState<IBuilderSidebar>(sidebarMenu);
 
     return (
         <BuilderContext.Provider
             value={{
+                sidebar,
+                setSidebar,
                 activeFormComponent,
                 setActiveFormComponent,
                 setState,

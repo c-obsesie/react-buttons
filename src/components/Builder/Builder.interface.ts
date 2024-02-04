@@ -1,4 +1,9 @@
 import { CSSProperties } from "react";
+import { IBuilderBasics } from "./Components/Forms/Basics/Basics.interface";
+import { IBuilderTypography } from "./Components/Forms/Typography/Typography.interface";
+import { IBuilderColors } from "./Components/Forms/Colors/Colors.interface";
+import { IBuilderBorder } from "./Components/Forms/Border/Border.interface";
+import { IBuilderHoverEffects } from "./Components/Forms/Hover/Hover.interface";
 
 export interface IBuilderAttributes {
     value: string | number;
@@ -7,48 +12,20 @@ export interface IBuilderAttributes {
     cssProperty: string;
 }
 
-export interface IBuilderBasics {
-    label: string;
-    url: string;
-
-    // done
-    openInNewWindow: boolean;
-
-    // done
-    width: {
-        value: number;
-        type: "px" | "percent";
-    } | null;
-
-    // done
-    height: {
-        value: number;
-        type: "px" | "percent";
-    } | null;
-
-    // done
-    padding: {
-        left: number;
-        right: number;
-        top: number;
-        bottom: number;
-    };
-}
-
-export interface IBuilderText {
-    fontFamily: IBuilderAttributes;
-    fontSize: IBuilderAttributes;
-    fontWeight: IBuilderAttributes;
-    fontStyle: IBuilderAttributes;
-    color: string;
-    hoverColor: string;
-}
-export interface IBuilderBackground {}
-
 export interface IButtonBuilder {
     basics: IBuilderBasics;
-    text: IBuilderText;
-    // background: IBuilderBackground;
-    // icons: unknown;
-    // hoverEffects: unknown;
+    typography: IBuilderTypography;
+    colors: IBuilderColors;
+    border: IBuilderBorder;
+    hoverEffects: IBuilderHoverEffects;
+}
+
+export enum BuilderForms {
+    Basics = "Basics",
+    Typography = "Typography",
+    Colors = "Colors",
+    Border = "Border",
+    Icons = "Icons",
+    HoverEffects = "HoverEffects",
+    Animations = "Animations",
 }

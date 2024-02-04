@@ -2,11 +2,9 @@ import { useBuilderContext } from "@/providers/builder.provider";
 import { sidebarMenu } from "../Sidebar/BuilderSidebar.logic";
 
 const FormsView = () => {
-    const { activeFormComponent } = useBuilderContext();
+    const { activeFormComponent, sidebar } = useBuilderContext();
 
-    const ActiveSidebarComponent = sidebarMenu.find(
-        ({ label }) => label === activeFormComponent
-    )?.Component;
+    const ActiveSidebarComponent = sidebar[activeFormComponent].Component;
 
     if (!ActiveSidebarComponent) {
         return "Component not found";

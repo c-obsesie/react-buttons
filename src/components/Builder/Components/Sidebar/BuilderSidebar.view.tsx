@@ -1,4 +1,5 @@
 import { useBuilderContext } from "../../../../providers/builder.provider";
+import { BuilderForms } from "../../Builder.interface";
 import { sidebarMenu } from "./BuilderSidebar.logic";
 import "./BuilderSidebar.scss";
 
@@ -7,16 +8,16 @@ const BuilderSidebarView = () => {
 
     return (
         <div className="react-buttons-builder-sidebar">
-            {sidebarMenu.map(({ Icon, label }) => (
+            {Object.entries(sidebarMenu).map(([key, { Icon }]) => (
                 <button
-                    onClick={() => setActiveFormComponent(label)}
-                    key={label}
+                    onClick={() => setActiveFormComponent(key as BuilderForms)}
+                    key={key}
                     className={`d-flex flex-column align-items-center justify-content-center gap-2 ${
-                        label === activeFormComponent ? "active" : ""
+                        key === activeFormComponent ? "active" : ""
                     }`}
                 >
                     <Icon size={40} />
-                    {label}
+                    {key}
                 </button>
             ))}
         </div>
