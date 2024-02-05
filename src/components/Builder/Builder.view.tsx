@@ -9,17 +9,17 @@ import BuilderProvider from "../../providers/builder.provider";
 const BuilderView = () => {
     return (
         <BuilderProvider>
-            <div className="react-buttons-builder-container p-4">
-                <div className="row">
-                    <div className="col-2">
+            <div className="react-buttons-builder-container container mx-auto">
+                <div className="grid grid-cols-12 gap-4">
+                    <div className="col-span-2">
                         <BuilderSidebarView />
                     </div>
 
-                    <div className="col-5">
+                    <div className="col-span-5 p-5">
                         <FormsView />
                     </div>
 
-                    <div className="col-5">
+                    <div className="col-span-5 p-5">
                         <BuilderPreviewView />
                     </div>
                 </div>

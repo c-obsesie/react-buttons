@@ -1,19 +1,20 @@
+@import "../../../../styles/global";
+
 .react-buttons-builder-sidebar {
-    border-right: 1px solid #304562;
+    border-right: 1px solid $border;
+
     > button {
-        background: #1f2d40;
-        border-radius: 16px;
-        border: 1px solid #304562;
+        background: $background;
+        border-bottom: 1px solid $border;
         height: 100px;
         width: 150px;
-        margin-bottom: 10px;
 
         &:hover {
-            background: #304562;
+            background: $input;
         }
 
         &.active {
-            border-color: #17212f;
+            background: $input;
         }
     }
 }

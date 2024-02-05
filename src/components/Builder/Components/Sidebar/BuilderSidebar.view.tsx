@@ -12,7 +12,7 @@ const BuilderSidebarView = () => {
                 <button
                     onClick={() => setActiveFormComponent(key as BuilderForms)}
                     key={key}
-                    className={`d-flex flex-column align-items-center justify-content-center gap-2 ${
+                    className={`flex flex-col items-center justify-center gap-2 ${
                         key === activeFormComponent ? "active" : ""
                     }`}
                 >
