@@ -3,8 +3,9 @@
 import BuilderSidebarView from "./Components/Sidebar/BuilderSidebar.view";
 import FormsView from "./Components/Forms/Forms.view";
 import BuilderPreviewView from "./Components/Preview/BuilderPreview.view";
-import "./Builder.scss";
 import BuilderProvider from "../../providers/builder.provider";
+
+import "./Builder.scss";
 
 const BuilderView = () => {
     return (

@@ -2,4 +2,42 @@
 
 .react-buttons-builder-container {
     background: $background;
+
+    input {
+        background: $input;
+        color: #fff;
+        font-size: 16px;
+        padding: 15px 20px;
+        border-radius: 8px;
+    }
+
+    .checkbox-input {
+        height: fit-content;
+        margin-top: 40px;
+
+        input {
+            display: none;
+        }
+        span {
+            background: $input;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            > svg {
+                display: none;
+            }
+        }
+
+        input:checked + span {
+            background: $mainColor;
+            > svg {
+                display: block;
+            }
+        }
+    }
+
+    *:focus,
+    *:focus-visible {
+        outline: none;
+    }
 }
