@@ -7,12 +7,12 @@ export interface IBuilderBasics {
     width: {
         value: number;
         type: "px" | "percent";
-    } | null;
+    };
 
     height: {
         value: number;
         type: "px" | "percent";
-    } | null;
+    };
 
     padding:
         | {

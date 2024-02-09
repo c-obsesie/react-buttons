@@ -29,7 +29,18 @@ export const BuilderContext = createContext<IBuilderContext>(
 export const useBuilderContext = () => useContext(BuilderContext);
 
 export default function BuilderProvider({ children }: { children: ReactNode }) {
-    const [state, setState] = useState<IButtonBuilder>({} as IButtonBuilder);
+    const [state, setState] = useState<IButtonBuilder>({
+        basics: {
+            width: {
+                type: "px",
+                value: 0,
+            },
+            height: {
+                type: "px",
+                value: 0,
+            },
+        },
+    } as IButtonBuilder);
     const [activeFormComponent, setActiveFormComponent] =
         useState<BuilderForms>(BuilderForms.Basics);
     const [sidebar, setSidebar] = useState<IBuilderSidebar>(sidebarMenu);
