@@ -4,5 +4,5 @@ export interface IBuilderTypography {
     fontWeight: string;
     fontStyle: "regular" | "italic";
     color: string;
-    letterSpacing: string;
+    letterSpacing: number;
 }

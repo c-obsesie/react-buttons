@@ -14,20 +14,16 @@ export interface IBuilderBasics {
         type: "px" | "percent";
     };
 
-    padding:
-        | {
-              left: number;
-              right: number;
-              top: number;
-              bottom: number;
-          }
-        | undefined;
-    margin:
-        | {
-              left: number;
-              right: number;
-              top: number;
-              bottom: number;
-          }
-        | undefined;
+    padding: {
+        left: number;
+        right: number;
+        top: number;
+        bottom: number;
+    };
+    margin: {
+        left: number;
+        right: number;
+        top: number;
+        bottom: number;
+    };
 }

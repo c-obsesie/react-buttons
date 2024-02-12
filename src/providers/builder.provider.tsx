@@ -2,6 +2,7 @@ import {
     BuilderForms,
     IButtonBuilder,
 } from "@/components/Builder/Builder.interface";
+import { typographyMockData } from "@/components/Builder/Components/Forms/Typography/Typography.logic";
 import { IBuilderSidebar } from "@/components/Builder/Components/Sidebar/BuilderSidebar.interface";
 import { sidebarMenu } from "@/components/Builder/Components/Sidebar/BuilderSidebar.logic";
 import {
@@ -30,6 +31,7 @@ export const useBuilderContext = () => useContext(BuilderContext);
 
 export default function BuilderProvider({ children }: { children: ReactNode }) {
     const [state, setState] = useState<IButtonBuilder>({
+        typography: typographyMockData,
         basics: {
             width: {
                 type: "px",
@@ -39,11 +41,25 @@ export default function BuilderProvider({ children }: { children: ReactNode }) {
                 type: "px",
                 value: 0,
             },
+            padding: {
+                bottom: 0,
+                left: 0,
+                right: 0,
+                top: 0,
+            },
+            margin: {
+                bottom: 0,
+                left: 0,
+                right: 0,
+                top: 0,
+            },
         },
     } as IButtonBuilder);
     const [activeFormComponent, setActiveFormComponent] =
-        useState<BuilderForms>(BuilderForms.Basics);
+        useState<BuilderForms>(BuilderForms.Typography);
     const [sidebar, setSidebar] = useState<IBuilderSidebar>(sidebarMenu);
+
+    console.log("PROVIDER STATE", state);
 
     return (
         <BuilderContext.Provider
