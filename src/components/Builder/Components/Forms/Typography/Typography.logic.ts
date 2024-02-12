@@ -1,7 +1,7 @@
 import { IBuilderTypography } from "./Typography.interface";
 
 export const typographyMockData: IBuilderTypography = {
-    color: "#000000",
+    color: "#FFFFFF",
     fontFamily: "inherit",
     fontSize: 16,
     fontStyle: "regular",

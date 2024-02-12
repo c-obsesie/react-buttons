@@ -56,7 +56,7 @@ export default function BuilderProvider({ children }: { children: ReactNode }) {
         },
     } as IButtonBuilder);
     const [activeFormComponent, setActiveFormComponent] =
-        useState<BuilderForms>(BuilderForms.Typography);
+        useState<BuilderForms>(BuilderForms.Colors);
     const [sidebar, setSidebar] = useState<IBuilderSidebar>(sidebarMenu);
 
     console.log("PROVIDER STATE", state);

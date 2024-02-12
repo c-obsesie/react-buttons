@@ -1,4 +1,5 @@
 import { useBuilderContext } from "@/providers/builder.provider";
+import { HexColorPicker } from "react-colorful";
 import { RxFontSize } from "react-icons/rx";
 import { TbLetterSpacing } from "react-icons/tb";
 
@@ -106,6 +107,39 @@ const TypographyView = () => {
                         px
                     </div>
                 </div>
+            </div>
+
+            <div className="flex flex-col gap-2 mb-5 relative">
+                <button
+                    style={{
+                        background: color,
+                    }}
+                    className={`absolute h-[54px] w-[54px] bottom-0 right-0 rounded-[8px] flex items-center justify-center`}
+                >
+                    <HexColorPicker
+                        color={color}
+                        onChange={(color) => {
+                            setState((prev) => ({
+                                ...prev,
+                                typography: {
+                                    ...prev.typography,
+                                    color: color,
+                                },
+                            }));
+                        }}
+                        className="!hidden !absolute bottom-full right-0"
+                    />
+                </button>
+
+                <label htmlFor="color">Color</label>
+                <input
+                    type="text"
+                    id="color"
+                    min={0}
+                    readOnly
+                    defaultValue={color}
+                    className="w-full"
+                />
             </div>
         </div>
     );
