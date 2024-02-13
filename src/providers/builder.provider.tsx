@@ -2,7 +2,8 @@ import {
     BuilderForms,
     IButtonBuilder,
 } from "@/components/Builder/Builder.interface";
-import { typographyMockData } from "@/components/Builder/Components/Forms/Typography/Typography.logic";
+import { colorsMockData } from "@/components/Builder/Components/Forms/Colors/Colors.mock.data";
+import { typographyMockData } from "@/components/Builder/Components/Forms/Typography/Typography.mock.data";
 import { IBuilderSidebar } from "@/components/Builder/Components/Sidebar/BuilderSidebar.interface";
 import { sidebarMenu } from "@/components/Builder/Components/Sidebar/BuilderSidebar.logic";
 import {
@@ -32,6 +33,7 @@ export const useBuilderContext = () => useContext(BuilderContext);
 export default function BuilderProvider({ children }: { children: ReactNode }) {
     const [state, setState] = useState<IButtonBuilder>({
         typography: typographyMockData,
+        colors: colorsMockData,
         basics: {
             width: {
                 type: "px",

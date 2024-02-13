@@ -1,6 +1,6 @@
 export interface IBuilderColors {
     background: {
-        colors: IBuilderProps[];
+        colors: IBuilderProps[] | [];
         type: "linear" | "radial" | null;
         angle: number | null;
     };
