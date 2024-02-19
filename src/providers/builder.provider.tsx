@@ -2,6 +2,7 @@ import {
     BuilderForms,
     IButtonBuilder,
 } from "@/components/Builder/Builder.interface";
+import { borderMockData } from "@/components/Builder/Components/Forms/Border/Border.mock.data";
 import { colorsMockData } from "@/components/Builder/Components/Forms/Colors/Colors.mock.data";
 import { typographyMockData } from "@/components/Builder/Components/Forms/Typography/Typography.mock.data";
 import { IBuilderSidebar } from "@/components/Builder/Components/Sidebar/BuilderSidebar.interface";
@@ -34,6 +35,7 @@ export default function BuilderProvider({ children }: { children: ReactNode }) {
     const [state, setState] = useState<IButtonBuilder>({
         typography: typographyMockData,
         colors: colorsMockData,
+        border: borderMockData,
         basics: {
             width: {
                 type: "px",
@@ -58,7 +60,7 @@ export default function BuilderProvider({ children }: { children: ReactNode }) {
         },
     } as IButtonBuilder);
     const [activeFormComponent, setActiveFormComponent] =
-        useState<BuilderForms>(BuilderForms.Colors);
+        useState<BuilderForms>(BuilderForms.Icons);
     const [sidebar, setSidebar] = useState<IBuilderSidebar>(sidebarMenu);
 
     console.log("PROVIDER STATE", state);

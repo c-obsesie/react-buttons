@@ -4,6 +4,7 @@ import { IBuilderTypography } from "./Components/Forms/Typography/Typography.int
 import { IBuilderColors } from "./Components/Forms/Colors/Colors.interface";
 import { IBuilderBorder } from "./Components/Forms/Border/Border.interface";
 import { IBuilderHoverEffects } from "./Components/Forms/Hover/Hover.interface";
+import { IBuilderIcons } from "./Components/Forms/Icons/Icons.interface";
 
 export interface IBuilderAttributes {
     value: string | number;
@@ -18,6 +19,7 @@ export interface IButtonBuilder {
     colors: IBuilderColors;
     border: IBuilderBorder;
     hoverEffects: IBuilderHoverEffects;
+    icons: IBuilderIcons;
 }
 
 export enum BuilderForms {
