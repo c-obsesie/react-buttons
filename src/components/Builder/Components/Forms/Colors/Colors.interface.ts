@@ -19,4 +19,5 @@ export interface IBuilderColors {
 export interface IBuilderProps {
     hex: string;
     stop: number;
+    id: number;
 }

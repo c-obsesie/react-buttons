@@ -1,9 +1,9 @@
-import { Fragment, useRef } from "react";
+import { Fragment, useRef, useState } from "react";
 import { useColorsLogic } from "./Colors.logic";
-import { IoClose } from "react-icons/io5";
 import { useBuilderContext } from "@/providers/builder.provider";
 import ColorStopView from "../../UI/Colors/ColorStop/ColorStop.view";
-import Draggable from "react-draggable";
+import Draggable, { DraggableData } from "react-draggable";
+import ColorPicker, { useColorPicker } from "react-best-gradient-color-picker";
 
 const ColorsView = () => {
     const {
@@ -22,6 +22,11 @@ const ColorsView = () => {
 
     // const gradientElementRef = useRef<HTMLDivElement>(null);
 
+    const [color, setColor] = useState(
+        "linear-gradient(90deg, rgba(96,93,93,1) 0%, rgba(255,255,255,1) 100%)"
+    );
+    const { addPoint, deletePoint } = useColorPicker(color, setColor);
+
     if (!colors) {
         return;
     }
@@ -33,6 +38,31 @@ const ColorsView = () => {
             <div className="border-b border-[#393b3c] pb-4 mb-4">
                 <h2 className="text-lg">Colors</h2>
             </div>
+
+            <button
+                onClick={() => {
+                    addPoint(30);
+                }}
+            >
+                Add
+            </button>
+            <ColorPicker
+                hideAdvancedSliders
+                hideColorGuide
+                hideControls
+                hideGradientAngle
+                hideInputs
+                hideColorTypeBtns
+                hideEyeDrop
+                hideGradientControls
+                hideGradientStop
+                hideGradientType
+                hideInputType
+                hideOpacity
+                hidePresets
+                value={color}
+                onChange={setColor}
+            />
 
             <div className="text-md font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
                 <ul className="flex flex-wrap -mb-px">
@@ -120,17 +150,25 @@ const ColorsView = () => {
                                         axis="x"
                                         bounds="parent"
                                         onDrag={(_, { x }) => {
-                                            // if (!gradientElementRef.current) {
-                                            //     return;
-                                            // }
+                                            const updatedColors = [...colors];
 
-                                            // const elementWidth =
-                                            //     gradientElementRef.current
-                                            //         .clientWidth;
+                                            updatedColors[index].stop =
+                                                Math.round((x / 586) * 200);
+
+                                            setState((prev) => ({
+                                                ...prev,
+                                                colors: {
+                                                    ...prev.colors,
+                                                    background: {
+                                                        ...prev.colors
+                                                            .background,
+                                                        colors: updatedColors,
+                                                    },
+                                                },
+                                            }));
 
                                             console.log(
-                                                Math.round((x / 586) * 100) +
-                                                    "%"
+                                                Math.round((x / 586) * 200)
                                             );
                                         }}
                                     >
@@ -156,7 +194,7 @@ const ColorsView = () => {
                                     .sort((a, b) => a.stop - b.stop)
                                     .map((color, index) => (
                                         <ColorStopView
-                                            key={index}
+                                            key={color.stop}
                                             {...{ ...color, index }}
                                         />
                                     ))}
@@ -174,7 +212,11 @@ const ColorsView = () => {
                                         ...prev.colors.background,
                                         colors: [
                                             ...prev.colors.background.colors,
-                                            { hex: "#FFFFFF", stop: 0 },
+                                            {
+                                                hex: "#FFFFFF",
+                                                stop: 0,
+                                                id: colors.length,
+                                            },
                                         ],
                                     },
                                 },
