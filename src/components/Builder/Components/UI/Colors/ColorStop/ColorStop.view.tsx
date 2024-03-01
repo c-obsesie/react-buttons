@@ -8,10 +8,14 @@ import { IoClose } from "react-icons/io5";
 import { useColorStoplogic } from "./ColorStop.logic";
 
 const ColorStopView = ({
-    hex,
-    stop,
+    value,
+    left,
     index,
-}: IBuilderProps & { index: number }) => {
+}: {
+    value: string;
+    left: number;
+    index: number;
+}) => {
     const { changeColorProp } = useColorStoplogic();
 
     const popover = useRef();
@@ -27,7 +31,7 @@ const ColorStopView = ({
             <div className="flex flex-col gap-2 relative col-span-2">
                 <button
                     style={{
-                        background: hex,
+                        background: value,
                     }}
                     onClick={() => toggle(true)}
                     className={`absolute h-[54px] w-[54px] bottom-0 right-0 rounded-[8px] flex items-center justify-center`}
@@ -35,7 +39,7 @@ const ColorStopView = ({
                     {isOpen ? (
                         <div className="popover" ref={popover as any}>
                             <HexColorPicker
-                                color={hex}
+                                color={value}
                                 onChange={(hexColor) => {
                                     changeColorProp({
                                         index,
@@ -53,7 +57,7 @@ const ColorStopView = ({
                     type="text"
                     id="color"
                     readOnly
-                    value={hex}
+                    value={value}
                     className="w-full"
                 />
             </div>
@@ -69,7 +73,7 @@ const ColorStopView = ({
                     id="width"
                     min={0}
                     max={100}
-                    defaultValue={stop}
+                    defaultValue={left}
                     onChange={({ currentTarget }) => {
                         changeColorProp({
                             index,

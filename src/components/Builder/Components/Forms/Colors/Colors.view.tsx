@@ -25,13 +25,16 @@ const ColorsView = () => {
     const [color, setColor] = useState(
         "linear-gradient(90deg, rgba(96,93,93,1) 0%, rgba(255,255,255,1) 100%)"
     );
-    const { addPoint, deletePoint } = useColorPicker(color, setColor);
+    const { addPoint, deletePoint, getGradientObject } = useColorPicker(
+        color,
+        setColor
+    );
 
     if (!colors) {
         return;
     }
 
-    console.log(colors);
+    console.log(getGradientObject());
 
     return (
         <div className="forms-basic-view">
@@ -46,23 +49,6 @@ const ColorsView = () => {
             >
                 Add
             </button>
-            <ColorPicker
-                hideAdvancedSliders
-                hideColorGuide
-                hideControls
-                hideGradientAngle
-                hideInputs
-                hideColorTypeBtns
-                hideEyeDrop
-                hideGradientControls
-                hideGradientStop
-                hideGradientType
-                hideInputType
-                hideOpacity
-                hidePresets
-                value={color}
-                onChange={setColor}
-            />
 
             <div className="text-md font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
                 <ul className="flex flex-wrap -mb-px">
@@ -128,7 +114,7 @@ const ColorsView = () => {
                 >
                     {colors.length > 0 ? (
                         <Fragment>
-                            <div
+                            {/* <div
                                 // ref={gradientElementRef}
                                 className="bg-colors-wrapper h-[50px] w-full relative rounded-lg mb-5"
                                 style={{
@@ -186,18 +172,37 @@ const ColorsView = () => {
                                         ></div>
                                     </Draggable>
                                 ))}
-                            </div>
+                            </div> */}
+
+                            <ColorPicker
+                                className="mb-5"
+                                hideAdvancedSliders
+                                hideColorGuide
+                                hideControls
+                                hideGradientAngle
+                                hideInputs
+                                hideColorTypeBtns
+                                hideEyeDrop
+                                hideGradientControls
+                                hideGradientStop
+                                hideGradientType
+                                hideInputType
+                                hideOpacity
+                                hidePresets
+                                width={580}
+                                value={color}
+                                onChange={setColor}
+                            />
 
                             <div className="grid grid-cols-5 gap-6 mb-5 border-b pb-5 border-[#393B3C] items-end">
-                                {colors
-                                    .slice()
-                                    .sort((a, b) => a.stop - b.stop)
-                                    .map((color, index) => (
+                                {getGradientObject()?.colors.map(
+                                    (color: any, index: number) => (
                                         <ColorStopView
-                                            key={color.stop}
+                                            key={color.left}
                                             {...{ ...color, index }}
                                         />
-                                    ))}
+                                    )
+                                )}
                             </div>
                         </Fragment>
                     ) : null}
